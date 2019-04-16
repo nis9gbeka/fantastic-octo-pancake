@@ -1,0 +1,30 @@
+<html>
+<body>
+    <div>
+        <form action="/logout" method="post">
+            <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+            <input type="submit" value="Sign Out"/>
+        </form>
+    </div>
+    <form method="post">
+        <input type="text" name="text" placeholder="Enter order" />
+        <input type="text" name="date" placeholder="Choose date" />
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+        <button type="submit">Submit</button>
+    </form>
+
+    <div>Ayo technology</div>
+    <form method="post" action="filter">
+        <input type="text" name="filter">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+        <button type="submit">Find</button>
+    </form>
+    {{#arrivals}}
+    <div>
+        <b>{{id}}</b>
+        <span>{{text}}</span>
+        <i>{{date}}</i>
+    </div>
+    {{/arrivals}}
+</body>
+</html>
